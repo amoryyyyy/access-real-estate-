@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Access Real Estate - Building quality accessible homes that improve life for people with disabilities in Egypt">
+    <meta name="keywords" content="accessible housing, disability housing, Egypt real estate, wheelchair accessible, universal design">
+    <title>Access Real Estate | Premium Accessible Housing in Egypt</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-green: #2E7D32;
+            --light-green: #66BB6A;
+            --secondary-blue: #1976D2;
+            --accent-gold: #FF9800;
+            --neutral-gray: #F5F5F5;
+            --charcoal: #424242;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--charcoal);
+            background: var(--white);
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--white);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid var(--accent-gold);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem 2rem;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-image {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-text .brand-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-green);
+            letter-spacing: 0.5px;
+        }
+
+        .logo-text .brand-tagline {
+            font-family: Georgia, serif;
+            font-style: italic;
+            font-size: 0.85rem;
+            color: var(--charcoal);
+            margin-top: -3px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--charcoal);
+            font-weight: 500;
+            transition: all 0.3s;
+            padding: 0.5rem 0;
+            border-bottom: 2px solid transparent;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-green);
+            border-bottom-color: var(--accent-gold);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--light-green) 100%);
+            color: var(--white);
+            padding: 10rem 2rem 5rem;
+            text-align: center;
+            margin-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(255,152,0,0.1) 0%, transparent 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .hero .slogan {
+            font-family: Georgia, serif;
+            font-size: 1.8rem;
+            font-style: italic;
+            margin-bottom: 1rem;
+            color: var(--accent-gold);
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, var(--accent-gold) 0%, #FFB74D 100%);
+            color: var(--white);
+            padding: 1.2rem 2.5rem;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+            font-weight: 600;
+            box-shadow: 0 6px 20px rgba(255, 152, 0, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cta-button:hover {
+            background: linear-gradient(135deg, #F57C00 0%, var(--accent-gold) 100%);
+            box-shadow: 0 8px 25px rgba(255, 152, 0, 0.4);
+            transform: translateY(-2px);
+        }
+
+        /* Sections */
+        section {
+            padding: 4rem 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2.8rem;
+            color: var(--primary-green);
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-family: Georgia, serif;
+            color: var(--secondary-blue);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--charcoal);
+        }
+
+        /* Features Section */
+        .features {
+            background: linear-gradient(135deg, var(--neutral-gray) 0%, #FAFAFA 100%);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-green), var(--accent-gold));
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(46, 125, 50, 0.15);
+            border-color: var(--accent-gold);
+        }
+
+        .feature-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .feature-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            filter: drop-shadow(2px 2px 4px rgba(255, 152, 0, 0.3));
+        }
+
+        .feature-card h3 {
+            font-family: Georgia, serif;
+            color: var(--primary-green);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .feature-card p {
+            color: var(--charcoal);
+            line-height: 1.7;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 3rem;
+        }
+
+        .project-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            border: 2px solid var(--neutral-gray);
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(25, 118, 210, 0.2);
+            border-color: var(--accent-gold);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 280px;
+            background: linear-gradient(135deg, var(--secondary-blue) 0%, #42A5F5 50%, var(--accent-gold) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.2rem;
+            font-weight: 600;
+            position: relative;
+        }
+
+        .project-image::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(255,255,255,0.05) 10px,
+                rgba(255,255,255,0.05) 20px
+            );
+        }
+
+        .project-info {
+            padding: 2rem;
+            background: var(--white);
+        }
+
+        .project-info h3 {
+            font-family: Georgia, serif;
+            color: var(--primary-green);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .project-info p {
+            margin-bottom: 0.7rem;
+            color: var(--charcoal);
+            line-height: 1.7;
+        }
+
+        .project-info p strong {
+            color: var(--secondary-blue);
+        }
+
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, var(--secondary-blue) 0%, #1565C0 50%, var(--primary-green) 100%);
+            color: var(--white);
+            position: relative;
+        }
+
+        .contact::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></svg>');
+            opacity: 0.3;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-info h3 {
+            font-family: Georgia, serif;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.2rem;
+            padding: 0.5rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 1.2rem;
+            margin-bottom: 1.2rem;
+            border: 2px solid transparent;
+            border-radius: 10px;
+            font-family: inherit;
+            transition: all 0.3s;
+            background: rgba(255,255,255,0.95);
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--accent-gold);
+            background: var(--white);
+            box-shadow: 0 4px 15px rgba(255, 152, 0, 0.2);
+        }
+
+        .contact-form textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--charcoal) 0%, #2c2c2c 100%);
+            color: var(--white);
+            text-align: center;
+            padding: 3rem 2rem;
+            position: relative;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-green), var(--accent-gold), var(--secondary-blue));
+        }
+
+        footer h3 {
+            font-family: 'Playfair Display', Georgia, serif;
+            margin-bottom: 0.5rem;
+        }
+
+        footer .slogan {
+            font-family: Georgia, serif;
+            font-style: italic;
+            color: var(--accent-gold);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        /* Accessibility */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0,0,0,0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo-container">
+                <!-- LOGO IMAGE: Place your logo file in the same folder as this HTML file and name it "logo.png" -->
+                <!-- Then uncomment the line below -->
+                <!-- <img src="logo.png" alt="Access Real Estate Logo" class="logo-image"> -->
+                
+                <!-- Temporary text logo (remove when you add image) -->
+                <div class="logo-text">
+                    <span class="brand-name">ACCESS REAL ESTATE</span>
+                    <span class="brand-tagline">Independent. Together.</span>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Premium Accessible Living in Egypt</h1>
+            <p class="slogan">Independent. Together.</p>
+            <p>Luxury homes designed for people with disabilities who value both independence and sophistication</p>
+            <a href="#contact" class="cta-button">Schedule a Consultation</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Access Real Estate</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Our Mission</h3>
+                    <p>To build quality accessible homes that improve life for people with disabilities while making profit for our business.</p>
+                    
+                    <h3>Our Vision</h3>
+                    <p>To be the top company known for building accessible housing that helps people with disabilities live independently.</p>
+                </div>
+                <div class="about-text">
+                    <h3>Premium Accessible Living</h3>
+                    <p>Access Real Estate is Egypt's premier luxury accessible housing developer. We specialize in creating sophisticated homes with accessibility features that exceed standard requirements by 25%.</p>
+                    <p>Our team includes an in-house Accessibility Consultant and an advisory board of people with disabilities who ensure every design reflects both elegance and functionality. We don't just add ramps to standard homes – we reimagine luxury living with accessibility at its core.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">Premium Accessible Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🚪</div>
+                    <h3>Extra-Wide Doorways</h3>
+                    <p>120cm doorways - 30% wider than standard, elegantly designed for effortless wheelchair access</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">♿</div>
+                    <h3>Seamless Access</h3>
+                    <p>Zero-step entry with architecturally integrated ramps and premium elevators</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🚿</div>
+                    <h3>Luxury Roll-In Showers</h3>
+                    <p>Spa-quality barrier-free showers with designer grab bars and premium finishes</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🍳</div>
+                    <h3>Gourmet Accessible Kitchens</h3>
+                    <p>Adjustable-height counters with high-end appliances and sophisticated storage solutions</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💡</div>
+                    <h3>Smart Home Integration</h3>
+                    <p>Premium automation with accessible controls, voice activation, and intelligent lighting</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏡</div>
+                    <h3>Elegant Open Layouts</h3>
+                    <p>Spacious, sophisticated floor plans with wide turning radiuses and luxury finishes</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">Our Exclusive Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        [Project Image Coming Soon]
+                    </div>
+                    <div class="project-info">
+                        <h3>Cairo Luxury Accessible Residences</h3>
+                        <p><strong>Location:</strong> Premium Cairo District</p>
+                        <p><strong>Units:</strong> 8 exclusive accessible residences</p>
+                        <p><strong>Price:</strong> Starting from 4,680,000 EGP</p>
+                        <p><strong>Status:</strong> Pre-Construction - Now Accepting Reservations</p>
+                        <p>Our flagship project featuring sophisticated accessible apartments with premium finishes and features exceeding standard requirements by 25%. Each residence is thoughtfully designed for independence and refined living.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        [Project Image Coming Soon]
+                    </div>
+                    <div class="project-info">
+                        <h3>Giza Elite Living</h3>
+                        <p><strong>Location:</strong> Giza, Egypt</p>
+                        <p><strong>Units:</strong> Future Development</p>
+                        <p><strong>Status:</strong> Coming 2026</p>
+                        <p>Next phase expansion bringing luxury accessible housing to Giza. Features will include premium materials, smart home integration, and our signature accessibility excellence.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Schedule Your Private Consultation</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Experience Premium Accessible Living</h3>
+                    <p>Discover how luxury and accessibility come together. Our accessibility experts are ready to discuss your unique needs and show you our sophisticated approach to accessible housing.</p>
+                    
+                    <div class="contact-item">
+                        <span>📍</span>
+                        <span>Cairo, Egypt</span>
+                    </div>
+                    <div class="contact-item">
+                        <span>📧</span>
+                        <span>info@accessrealestate.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <span>📱</span>
+                        <span>+20 XXX XXX XXXX</span>
+                    </div>
+                    
+                    <h3 style="margin-top: 2rem;">Consultation Hours</h3>
+                    <p>Sunday - Thursday: 9:00 AM - 5:00 PM</p>
+                    <p>Friday - Saturday: By Appointment</p>
+                    
+                    <p style="margin-top: 2rem; font-size: 0.95rem; opacity: 0.9;">As Egypt's premier accessible housing specialist, we serve middle to high-income individuals with disabilities in Cairo and Giza who value both independence and refined living.</p>
+                </div>
+                
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <input type="text" placeholder="Your Name *" required>
+                        <input type="email" placeholder="Your Email *" required>
+                        <input type="tel" placeholder="Phone Number">
+                        <textarea placeholder="Tell us about your accessibility needs and preferences *" required></textarea>
+                        <button type="submit" class="cta-button" style="width: 100%;">Request Consultation</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <h3>ACCESS REAL ESTATE</h3>
+            <p class="slogan">Independent. Together.</p>
+            <p style="margin-top: 1rem;">&copy; 2025 Access Real Estate. All rights reserved.</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem;">Egypt's Premier Luxury Accessible Housing Developer</p>
+        </div>
+    </footer>
+
+    <script>
+        // Form submission handler
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your consultation request! Our accessibility expert will contact you within 24 hours to schedule your personalized consultation.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
